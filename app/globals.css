@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rex-bg: #090B10;
+  --color-rex-sidebar: #0D1018;
+  --color-rex-card: #151923;
+  --color-rex-card-hover: #1A202E;
+  --color-rex-accent: #3B82F6;
+  --color-rex-accent-hover: #2563EB;
+  --color-rex-border: #1E2433;
+  --color-rex-border-light: #2A3347;
+}
+
+:root {
+  --background: #090B10;
+  --foreground: #F8FAFC;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #090B10;
+  color: #F8FAFC;
+  overflow: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E2433;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2D374D;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: #ffffff;
+}
+
+/* Subtle glowing pulse */
+@keyframes electric-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.animate-electric-pulse {
+  animation: electric-pulse 4s ease-in-out infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(59,130,246,0.15) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
